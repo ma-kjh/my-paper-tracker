@@ -1,7 +1,7 @@
 name: Update Papers
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"   # 매일 09:00 KST
   workflow_dispatch:
 
 jobs:
@@ -16,10 +16,25 @@ jobs:
           python-version: "3.11"
       - run: pip install arxiv pyyaml
       - run: python fetch_papers.py
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "📚 오늘의 Top 논문"
+          to: ${{ secrets.MAIL_TO }}
+          from: Paper Tracker
+          body: file://top_papers.md
+          convert_markdown: true
+
       - name: Commit & push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add papers/
+          git add papers/ top_papers.md
           git diff --staged --quiet || git commit -m "Update papers $(date +%F)"
           git push
