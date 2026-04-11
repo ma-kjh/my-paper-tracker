@@ -21,7 +21,7 @@ for kw in keywords:
     )
     for r in top_search.results():
         top_lines.append(f"\n## 🔎 {kw}")
-        top_lines.append(f"- **[{r.title}]({r.entry_id})**")
+        top_lines.append(f"- [{r.title}]({r.entry_id})")
         top_lines.append(f"  - {', '.join(a.name for a in r.authors[:3])}")
         top_lines.append(f"  - {r.summary[:400].strip()}...\n")
 
@@ -31,7 +31,7 @@ for kw in keywords:
         sort_by=arxiv.SortCriterion.SubmittedDate,
     )
     for r in search.results():
-        all_lines.append(f"- **[{r.title}]({r.entry_id})**")
+        all_lines.append(f"- [{r.title}]({r.entry_id})")
         all_lines.append(f"  - {', '.join(a.name for a in r.authors[:3])}")
         all_lines.append(f"  - {r.summary[:300].strip()}...\n")
 
