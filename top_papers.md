@@ -1,11 +1,11 @@
-# 🌟 Top Matches - 2026-04-28
+# 🌟 Top Matches - 2026-04-29
 
 
 ## 🔎 modality gap
-- [Is the Modality Gap a Bug or a Feature? A Robustness Perspective](http://arxiv.org/abs/2603.29080v1)
-  - Rhea Chowers, Oshri Naparstek, Udi Barzelay
-  - 📅 2026-03-30
-  - Many modern multi-modal models (e.g. CLIP) seek an embedding space in which the two modalities are aligned. Somewhat surprisingly, almost all existing models show a strong modality gap: the distribution of images is well-separated from the distribution of texts in the shared embedding space. Despite a series of recent papers on this topic, it is still not clear why this gap exists nor whether clos...
+- [Source-Modality Monitoring in Vision-Language Models](http://arxiv.org/abs/2604.22038v1)
+  - Etha Tianze Hua, Tian Yun, Ellie Pavlick
+  - 📅 2026-04-23
+  - We define and investigate source-modality monitoring -- the ability of multimodal models to track and communicate the input source from which pieces of information originate. We consider source-modality monitoring as an instance of the more general binding problem, and evaluate the extent to which models exploit syntactic vs. semantic signals in order to bind words like image in a user-provided pr...
 
 
 ## 🔎 LLM unlearning evaluation
